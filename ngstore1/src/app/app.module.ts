@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './reducers/tutorial.reducer';
+import { reducer } from './stores/tutorial/tutorial.reducer';
 
 import { AppComponent } from './app.component';
 import { Comp1Component } from './comp1/comp1.component';

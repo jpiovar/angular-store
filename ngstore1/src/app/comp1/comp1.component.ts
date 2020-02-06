@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { Tutorial } from './../models/tutorial.model';
-import { AppState } from './../app.state';
-import * as TutorialActions from './../actions/tutorial.actions';
+import { Tutorial } from './../stores/tutorial/tutorial.model';
+import { AppState } from './../stores/app.state';
+import * as TutorialActions from './../stores/tutorial/tutorial.actions';
 
 @Component({
   selector: 'app-comp1',
