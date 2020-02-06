@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Tutorial } from './../models/tutorial.model';
+import { AppState } from './../app.state';
+import * as TutorialActions from './../actions/tutorial.actions';
 
 @Component({
   selector: 'app-comp1',
@@ -7,7 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Comp1Component implements OnInit {
 
-  constructor() { }
+  // Section 1
+  tutorials: Observable<Tutorial[]>;
+
+  // Section 2
+  constructor(private store: Store<AppState>) {
+    this.tutorials = store.select('tutorial');
+  }
+
+  delTutorial(index) {
+    this.store.dispatch(new TutorialActions.RemoveTutorial(index) );
+  }
 
   ngOnInit() {
   }
