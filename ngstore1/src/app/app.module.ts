@@ -4,9 +4,9 @@ import { StoreModule } from '@ngrx/store';
 import { reducer } from './stores/tutorial/tutorial.reducer';
 
 import { AppComponent } from './app.component';
-import { Comp1Component } from './comp1/comp1.component';
-import { Comp2Component } from './comp2/comp2.component';
-import { Comp3Component } from './comp3/comp3.component';
+import { Comp1Component } from './comp1';
+import { Comp2Component } from './comp2';
+import { Comp3Component } from './comp3';
 
 @NgModule({
   declarations: [
