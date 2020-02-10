@@ -3,12 +3,12 @@ import { User } from './types';
 import * as UserActions from './actions';
 
 const initialState: User = {
-    id: '',
-    name: '',
-    email: ''
+    id: 'j',
+    name: 'jnk',
+    email: 'jnk@'
 };
 
-export function reducerUser(state: User|any = initialState, action: UserActions.Actions) {
+export function reducerUser(state: User = initialState, action: UserActions.Actions) {
 
     switch (action.type) {
         case UserActions.LOGIN:
