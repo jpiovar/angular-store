@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Tutorial } from './../stores/tutorial/tutorial.model';
-import { AppState } from './../stores/app.state';
+import { AppState } from './../stores';
 import * as TutorialActions from './../stores/tutorial/tutorial.actions';
 
 @Component({
@@ -17,6 +17,9 @@ export class Comp1Component implements OnInit {
 
   // Section 2
   constructor(private store: Store<AppState>) {
+    // tslint:disable-next-line: no-debugger
+    debugger;
+    console.log('ooooooo');
     this.tutorials = store.select('tutorial');
   }
 
