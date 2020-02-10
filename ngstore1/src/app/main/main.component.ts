@@ -13,11 +13,11 @@ export class MainComponent implements OnInit {
 
   user: Observable<User>;
 
-  constructor(private store: Store<AppState>) {
+  constructor(store: Store<AppState>) {
     // tslint:disable-next-line: no-debugger
     debugger;
     this.user = store.select('user');
-    console.log('main store');
+    console.log('main store', this.user);
   }
 
   ngOnInit() {
