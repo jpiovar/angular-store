@@ -11,21 +11,26 @@ import { User } from '../stores/user/types';
 })
 export class MainComponent implements OnInit {
 
-  // user: Observable<User>;
-
-  // constructor(private store: Store<AppState>) {
-  //   // this.user = store.select('user');
-  // }
-
-  // ngOnInit() {
-  // }
-
   user: Observable<User>;
 
-  constructor(private store: Store<AppState>) { }
-
-  ngOnInit(): void {
-    this.user = this.store.select('user');
+  constructor(private store: Store<AppState>) {
+    this.user = store.select('user');
   }
+
+  ngOnInit() {
+  }
+
+  get enrichedUser(): any {
+    return () =>
+      async () => await this.store.select('user');
+  }
+
+  // user: Observable<User>;
+
+  // constructor(private store: Store<AppState>) { }
+
+  // ngOnInit(): void {
+  //   this.user = this.store.select('user');
+  // }
 
 }

@@ -1,5 +1,6 @@
 <p>main works!</p>
 <!-- <div class="right" *ngIf="user"> -->
+<div *ngIf="enrichedUser">{{enrichedUser}}</div>
 <div *ngIf="user | async as userData; else elseBlock">
         <span>{{userData.name}}</span>
 </div>
