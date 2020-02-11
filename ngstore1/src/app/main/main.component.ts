@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from './../stores';
 // import { Observable } from 'rxjs';
@@ -26,21 +26,8 @@ export class MainComponent implements OnInit {
   ngOnInit() {
   }
 
-
-
-
   get enrichedUser(): any {
     return `enrichedUser ${this.user.name} ok`;
-    // return () =>
-    //   async () => await this.store.select('user');
   }
-
-  // user: Observable<User>;
-
-  // constructor(private store: Store<AppState>) { }
-
-  // ngOnInit(): void {
-  //   this.user = this.store.select('user');
-  // }
 
 }
