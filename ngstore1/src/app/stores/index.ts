@@ -1,4 +1,4 @@
-import { Tutorial } from './tutorial/tutorial.model';
+import { Tutorial } from './tutorial/types';
 import { User } from './user/types';
 
 export interface AppState {

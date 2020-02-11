@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from './../stores';
-import { Tutorial } from './../stores/tutorial/tutorial.model';
-import * as TutorialActions from './../stores/tutorial/tutorial.actions';
+import { Tutorial } from '../stores/tutorial/types';
+import * as TutorialActions from '../stores/tutorial/actions';
 import { Observable } from 'rxjs';
 
 @Component({

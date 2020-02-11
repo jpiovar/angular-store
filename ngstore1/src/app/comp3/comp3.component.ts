@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from './../stores';
 import { Observable } from 'rxjs';
-import { Tutorial } from './../stores/tutorial/tutorial.model';
+import { Tutorial } from '../stores/tutorial/types';
 
 @Component({
   selector: 'app-comp3',

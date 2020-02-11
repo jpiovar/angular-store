@@ -1,7 +1,7 @@
 // Section 1
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
-import { Tutorial } from './tutorial.model';
+import { Tutorial } from './types';
 
 // Section 2
 export const ADD_TUTORIAL       = '[TUTORIAL] Add';
@@ -17,7 +17,7 @@ export class AddTutorial implements Action {
 export class RemoveTutorial implements Action {
     readonly type = REMOVE_TUTORIAL;
 
-    constructor(public payload: number) {}
+    constructor(public payload: any) {}
 }
 
 // Section 4

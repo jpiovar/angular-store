@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './stores/tutorial/tutorial.reducer';
-import { reducerUser } from './stores/user/reducers';
+import { reducer as rt } from './stores/tutorial/reducers';
+import { reducer as ru } from './stores/user/reducers';
 
 import { AppComponent } from './app.component';
 import { Comp1Component } from './comp1';
@@ -23,8 +23,8 @@ import { MainComponent } from './main/main.component';
   imports: [
     BrowserModule,
     StoreModule.forRoot({
-      tutorial: reducer,
-      user: reducerUser
+      tutorial: rt,
+      user: ru
     })
   ],
   providers: [],

@@ -8,8 +8,9 @@ const initialState: User = {
     email: 'jnk@'
 };
 
-export function reducerUser(state: User = initialState, action: UserActions.Actions) {
-
+export function reducer(state: User = initialState, action: UserActions.Actions) {
+    // tslint:disable-next-line: no-debugger
+    debugger;
     switch (action.type) {
         case UserActions.LOGIN:
             // tslint:disable-next-line: no-debugger
@@ -18,7 +19,7 @@ export function reducerUser(state: User = initialState, action: UserActions.Acti
             return {...state, newState};
 
         case UserActions.LOGOUT:
-            return Object.assign(state, initialState);
+            return {...state, ...initialState};
 
         default:
             return state;
