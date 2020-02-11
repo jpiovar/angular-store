@@ -1,8 +1,16 @@
 <p>main works!</p>
 <!-- <div class="right" *ngIf="user"> -->
-<div *ngIf="enrichedUser">{{enrichedUser}}</div>
-<div *ngIf="user | async as userData; else elseBlock">
-        <span>{{userData.name}}</span>
+    <div id="enriched">
+        <div *ngIf="enrichedUser">{{enrichedUser}}</div>
+    </div>
+
+
+<!-- <div *ngIf="user | async as userData; else elseBlock">
+    <span>{{userData.name}}</span>
+</div> -->
+
+<div *ngIf="user as userData; else elseBlock">
+    <span>{{userData.name}}</span>
 </div>
 <ng-template #elseBlock>
     <span>elseBlock</span>

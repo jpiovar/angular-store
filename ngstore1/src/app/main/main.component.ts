@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { AppState } from './../stores';
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 import { User } from '../stores/user/types';
 
 @Component({
@@ -11,18 +11,28 @@ import { User } from '../stores/user/types';
 })
 export class MainComponent implements OnInit {
 
-  user: Observable<User>;
+  // user: Observable<User>;
+  user: User;
 
   constructor(private store: Store<AppState>) {
-    this.user = store.select('user');
+    // this.user = store.select('user');
+    store.select('user')
+      .subscribe(({ id, name, email }) => {
+        this.user = { id, name, email };
+        // zohladnis dalsie akcie nad novym userom
+      });
   }
 
   ngOnInit() {
   }
 
+
+
+
   get enrichedUser(): any {
-    return () =>
-      async () => await this.store.select('user');
+    return `enrichedUser ${this.user.name} ok`;
+    // return () =>
+    //   async () => await this.store.select('user');
   }
 
   // user: Observable<User>;
