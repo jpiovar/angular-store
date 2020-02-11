@@ -23,6 +23,13 @@ export class Comp1Component implements OnInit {
     this.tutorials = store.select('tutorial');
   }
 
+  get tut(): string {
+    // tslint:disable-next-line: no-debugger
+    debugger;
+    return '';
+    // return this.tutorials.subscribe(val => console.log(val));
+  }
+
   delTutorial(index) {
     this.store.dispatch(new TutorialActions.RemoveTutorial(index) );
   }

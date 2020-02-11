@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { User } from './../stores/user/types';
 import { AppState } from './../stores';
+import { Observable } from 'rxjs';
+import { User } from '../stores/user/types';
 
 @Component({
   selector: 'app-main',
@@ -13,11 +13,8 @@ export class MainComponent implements OnInit {
 
   user: Observable<User>;
 
-  constructor(store: Store<AppState>) {
-    // tslint:disable-next-line: no-debugger
-    debugger;
+  constructor(private store: Store<AppState>) {
     this.user = store.select('user');
-    console.log('main store', this.user);
   }
 
   ngOnInit() {
