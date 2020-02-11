@@ -1,4 +1,10 @@
 <p>main works!</p>
 <!-- <div class="right" *ngIf="user"> -->
-<pre>{{user}}</pre>
+<div *ngIf="user | async as userData; else elseBlock">
+        <span>{{userData.name}}</span>
+</div>
+<ng-template #elseBlock>
+    <span>elseBlock</span>
+</ng-template>
+
 <!-- </div> -->

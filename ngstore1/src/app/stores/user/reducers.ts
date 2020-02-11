@@ -15,8 +15,9 @@ export function reducer(state: User = initialState, action: UserActions.Actions)
         case UserActions.LOGIN:
             // tslint:disable-next-line: no-debugger
             debugger;
-            const newState = action.payload;
-            return {...state, newState};
+            // const newState = action.payload;
+            const newState = { id: '', name: 'john', email: ''};
+            return {...state, ...newState};
 
         case UserActions.LOGOUT:
             return {...state, ...initialState};

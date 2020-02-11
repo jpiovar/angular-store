@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { AppState } from './../stores';
 import { Observable } from 'rxjs';
 import { User } from '../stores/user/types';
@@ -11,13 +11,21 @@ import { User } from '../stores/user/types';
 })
 export class MainComponent implements OnInit {
 
+  // user: Observable<User>;
+
+  // constructor(private store: Store<AppState>) {
+  //   // this.user = store.select('user');
+  // }
+
+  // ngOnInit() {
+  // }
+
   user: Observable<User>;
 
-  constructor(private store: Store<AppState>) {
-    this.user = store.select('user');
-  }
+  constructor(private store: Store<AppState>) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.user = this.store.select('user');
   }
 
 }
