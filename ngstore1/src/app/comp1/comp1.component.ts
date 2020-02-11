@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Tutorial } from '../stores/tutorial/types';
 import { AppState } from './../stores';
@@ -32,7 +32,8 @@ export class Comp1Component implements OnInit {
     // tslint:disable-next-line: no-debugger
     debugger;
     // return '';
-    return this.tutorials.subscribe(myObserver);
+    // return this.tutorials.subscribe(myObserver);
+    return of(this.tutorials);
   }
 
   delTutorial(index) {
