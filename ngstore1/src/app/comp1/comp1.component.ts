@@ -31,9 +31,9 @@ export class Comp1Component implements OnInit {
   get tut(): string {
     // tslint:disable-next-line: no-debugger
     debugger;
-    // return '';
+    return 'tut';
     // return this.tutorials.subscribe(myObserver);
-    return of(this.tutorials);
+    // return of(this.tutorials);
   }
 
   delTutorial(index) {
