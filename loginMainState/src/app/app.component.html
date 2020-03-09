@@ -1,0 +1,17 @@
+<div class="content" role="main">
+
+  <nav>
+    <a routerLink="/login" routerLinkActive="active">Login page</a>
+    <a routerLink="/main" routerLinkActive="active">Main page</a>
+  </nav>
+
+  <router-outlet></router-outlet>
+
+  <div *ngIf="user as userData; else elseBlock">
+    <span>{{userData.name}}</span>
+  </div>
+  <ng-template #elseBlock>
+      <span>elseBlock</span>
+  </ng-template>
+
+</div>
